@@ -6,19 +6,21 @@ import { enquireScreen } from 'enquire-js';
 import Nav3 from './Nav3';
 import Banner5 from './Banner5';
 import Feature6 from './Feature6';
-import Pricing2 from './Pricing2';
+import DoiBongTable from './Pricing2'; 
 import Teams4 from './Teams4';
 import Footer2 from './Footer2';
 
 import {
   Nav30DataSource,
   Banner50DataSource,
-  Feature60DataSource,
+  ReportChartDataSource,
   Pricing20DataSource,
   Teams40DataSource,
   Footer20DataSource,
 } from './data.source';
 import './less/antMotionStyle.less';
+import DoiBongServices from '../services/doibong.services';
+import ReportChart from './Report';
 
 let isMobile;
 enquireScreen((b) => {
@@ -32,7 +34,146 @@ export default class Home extends React.Component {
     super(props);
     this.state = {
       isMobile,
-      show: !location.port, // 如果不是 dva 2.0 请删除
+      show: !location.port, 
+      age: [],
+      area: [],
+      height_weight: [],
+      overallDataSource: {
+        wrapper: { className: 'home-page-wrapper feature6-wrapper' },
+        OverPack: { className: 'home-page feature6', playScale: 0.3 },
+        Carousel: {
+          className: 'feature6-content',
+          dots: false,
+          wrapper: { className: 'feature6-content-wrapper' },
+          titleWrapper: {
+            className: 'feature6-title-wrapper',
+            barWrapper: {
+              className: 'feature6-title-bar-wrapper',
+              children: { className: 'feature6-title-bar' },
+            },
+            title: { className: 'feature6-title' },
+          },
+          children: [
+            {
+              title: {
+                className: 'feature6-title-text',
+                children: (
+                  <span>
+                    <span>
+                      <span>
+                        <p>OVERALL</p>
+                        <p>
+                          <br />
+                        </p>
+                      </span>
+                    </span>
+                  </span>
+                ),
+              },
+              className: 'feature6-item',
+              name: 'block0',
+              children: [
+                {
+                  md: 8,
+                  xs: 24,
+                  className: 'feature6-number-wrapper',
+                  name: 'child0',
+                  number: {
+                    className: 'feature6-number',
+                    unit: {
+                      className: 'feature6-unit',
+                      children: (
+                        <span>
+                          <p>
+                            <br />
+                          </p>
+                        </span>
+                      ),
+                    },
+                    toText: true,
+                    children: '0',
+                  },
+                  children: {
+                    className: 'feature6-text',
+                    children: (
+                      <span>
+                        <span>
+                          <span>
+                            <p>Đội bóng</p>
+                          </span>
+                        </span>
+                      </span>
+                    ),
+                  },
+                },
+                {
+                  md: 8,
+                  xs: 24,
+                  className: 'feature6-number-wrapper',
+                  name: 'child1',
+                  number: {
+                    className: 'feature6-number',
+                    unit: {
+                      className: 'feature6-unit',
+                      children: (
+                        <span>
+                          <p>
+                            <br />
+                          </p>
+                        </span>
+                      ),
+                    },
+                    toText: true,
+                    children: '0',
+                  },
+                  children: {
+                    className: 'feature6-text',
+                    children: (
+                      <span>
+                        <span>
+                          <p>Khu vực</p>
+                        </span>
+                      </span>
+                    ),
+                  },
+                },
+                {
+                  md: 8,
+                  xs: 24,
+                  className: 'feature6-number-wrapper',
+                  name: 'child2',
+                  number: {
+                    className: 'feature6-number',
+                    unit: {
+                      className: 'feature6-unit',
+                      children: (
+                        <span>
+                          <p>
+                            <br />
+                          </p>
+                        </span>
+                      ),
+                    },
+                    toText: true,
+                    children: '0',
+                  },
+                  children: {
+                    className: 'feature6-text',
+                    children: (
+                      <span>
+                        <span>
+                          <p>Cầu thủ</p>
+                        </span>
+                      </span>
+                    ),
+                  },
+                },
+              ],
+            },
+            
+          ],
+        },
+      },
     };
   }
 
@@ -54,14 +195,169 @@ export default class Home extends React.Component {
     /* 如果不是 dva 2.0 请删除 end */
   }
 
+  changeValue = async () => {
+    const resp = await DoiBongServices.overall();
+    this.setState({
+      overallDataSource: {
+        wrapper: { className: 'home-page-wrapper feature6-wrapper' },
+        OverPack: { className: 'home-page feature6', playScale: 0.3 },
+        Carousel: {
+          className: 'feature6-content',
+          dots: false,
+          wrapper: { className: 'feature6-content-wrapper' },
+          titleWrapper: {
+            className: 'feature6-title-wrapper',
+            barWrapper: {
+              className: 'feature6-title-bar-wrapper',
+              children: { className: 'feature6-title-bar' },
+            },
+            title: { className: 'feature6-title' },
+          },
+          children: [
+            {
+              title: {
+                className: 'feature6-title-text',
+                children: (
+                  <span>
+                    <span>
+                      <span>
+                        <p>OVERALL</p>
+                        <p>
+                          <br />
+                        </p>
+                      </span>
+                    </span>
+                  </span>
+                ),
+              },
+              className: 'feature6-item',
+              name: 'block0',
+              children: [
+                {
+                  md: 8,
+                  xs: 24,
+                  className: 'feature6-number-wrapper',
+                  name: 'child0',
+                  number: {
+                    className: 'feature6-number',
+                    unit: {
+                      className: 'feature6-unit',
+                      children: (
+                        <span>
+                          <p>
+                            <br />
+                          </p>
+                        </span>
+                      ),
+                    },
+                    toText: true,
+                    children: `${resp.data.doibongs}`,
+                  },
+                  children: {
+                    className: 'feature6-text',
+                    children: (
+                      <span>
+                        <span>
+                          <span>
+                            <p>Đội bóng</p>
+                          </span>
+                        </span>
+                      </span>
+                    ),
+                  },
+                },
+                {
+                  md: 8,
+                  xs: 24,
+                  className: 'feature6-number-wrapper',
+                  name: 'child1',
+                  number: {
+                    className: 'feature6-number',
+                    unit: {
+                      className: 'feature6-unit',
+                      children: (
+                        <span>
+                          <p>
+                            <br />
+                          </p>
+                        </span>
+                      ),
+                    },
+                    toText: true,
+                    children: `${resp.data.areas}`,
+                  },
+                  children: {
+                    className: 'feature6-text',
+                    children: (
+                      <span>
+                        <span>
+                          <p>Khu vực</p>
+                        </span>
+                      </span>
+                    ),
+                  },
+                },
+                {
+                  md: 8,
+                  xs: 24,
+                  className: 'feature6-number-wrapper',
+                  name: 'child2',
+                  number: {
+                    className: 'feature6-number',
+                    unit: {
+                      className: 'feature6-unit',
+                      children: (
+                        <span>
+                          <p>
+                            <br />
+                          </p>
+                        </span>
+                      ),
+                    },
+                    toText: true,
+                    children: `${resp.data.cauthus}`,
+                  },
+                  children: {
+                    className: 'feature6-text',
+                    children: (
+                      <span>
+                        <span>
+                          <p>Cầu thủ</p>
+                        </span>
+                      </span>
+                    ),
+                  },
+                },
+              ],
+            },
+            
+          ],
+        },
+      }
+    })
+    const age = await DoiBongServices.age();
+    this.setState({
+      age: age.data
+    })
+    const area = await DoiBongServices.area();
+    this.setState({
+      area: area.data
+    })
+
+    const height_weight = await DoiBongServices.get_height_weight();
+    this.setState({
+      height_weight: height_weight.data
+    })
+  }
+
   render() {
     const children = [
-      <Nav3
-        id="Nav3_0"
-        key="Nav3_0"
-        dataSource={Nav30DataSource}
-        isMobile={this.state.isMobile}
-      />,
+      // <Nav3
+      //   id="Nav3_0"
+      //   key="Nav3_0"
+      //   dataSource={Nav30DataSource}
+      //   isMobile={this.state.isMobile}
+      // />,
       <Banner5
         id="Banner5_0"
         key="Banner5_0"
@@ -71,13 +367,24 @@ export default class Home extends React.Component {
       <Feature6
         id="Feature6_0"
         key="Feature6_0"
-        dataSource={Feature60DataSource}
+        dataSource={this.state.overallDataSource}
         isMobile={this.state.isMobile}
       />,
-      <Pricing2
+      
+      <DoiBongTable
         id="Pricing2_0"
         key="Pricing2_0"
+        changeValue={this.changeValue}
         dataSource={Pricing20DataSource}
+        isMobile={this.state.isMobile}
+      />,
+      <ReportChart
+        id="Pricing2_0"
+        key="Pricing2_0"
+        age = {this.state.age}
+        area = {this.state.area}
+        height_weight= {this.state.height_weight}
+        dataSource={ReportChartDataSource}
         isMobile={this.state.isMobile}
       />,
       <Teams4

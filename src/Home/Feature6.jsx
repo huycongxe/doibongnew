@@ -79,7 +79,7 @@ class Feature6 extends React.PureComponent {
                       : 0,
                   formatMoney: true,
                 },
-                duration: 1000,
+                duration: 500,
                 delay: 300,
                 ease: 'easeInOutCirc',
               }}

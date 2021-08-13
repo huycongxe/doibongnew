@@ -1,11 +1,12 @@
 import React from 'react';
+import {Tag} from 'antd';
 export const Nav30DataSource = {
   wrapper: { className: 'header3 home-page-wrapper jzih1dpqqrg-editor_css' },
   page: { className: 'home-page' },
   logo: {
     className: 'header3-logo jzjgnya1gmn-editor_css',
     children:
-      'https://report.datvietvac.vn/s/-oukdiu/76001/60fd5e842a7e57433b7406cb3a081f3b/_/jira-logo-scaled.png',
+      '',
   },
   Menu: {
     className: 'header3-menu',
@@ -197,7 +198,7 @@ export const Feature60DataSource = {
             <span>
               <span>
                 <span>
-                  <p>Số lượng đội bóng</p>
+                  <p>OVERALL</p>
                   <p>
                     <br />
                   </p>
@@ -306,69 +307,29 @@ export const Feature60DataSource = {
           },
         ],
       },
-      {
-        title: {
-          className: 'feature6-title-text kluc7woniwl-editor_css',
-          children: (
-            <span>
-              <span>
-                <span>
-                  <p>Số lượng cầu thủ</p>
-                  <p>
-                    <br />
-                  </p>
-                </span>
-              </span>
-            </span>
-          ),
-        },
-        className: 'feature6-item',
-        name: 'block1',
-        children: [
-          {
-            md: 8,
-            xs: 24,
-            name: 'child0',
-            className: 'feature6-number-wrapper',
-            number: {
-              className: 'feature6-number',
-              unit: { className: 'feature6-unit', children: '万' },
-              toText: true,
-              children: '116',
-            },
-            children: { className: 'feature6-text', children: '模型数据' },
-          },
-          {
-            md: 8,
-            xs: 24,
-            name: 'child1',
-            className: 'feature6-number-wrapper',
-            number: {
-              className: 'feature6-number',
-              unit: { className: 'feature6-unit', children: '亿' },
-              toText: true,
-              children: '1.17',
-            },
-            children: { className: 'feature6-text', children: '模型迭代数量' },
-          },
-          {
-            md: 8,
-            xs: 24,
-            name: 'child2',
-            className: 'feature6-number-wrapper',
-            number: {
-              className: 'feature6-number',
-              unit: { className: 'feature6-unit', children: '亿' },
-              toText: true,
-              children: '2.10',
-            },
-            children: { className: 'feature6-text', children: '训练样本数量' },
-          },
-        ],
-      },
+      
     ],
   },
 };
+export const ReportChartDataSource = {
+  wrapper: { className: 'home-page-wrapper pricing2-wrapper' },
+  page: { className: 'home-page pricing2' },
+  OverPack: { playScale: 0.3, className: 'pricing2-content-wrapper' },
+  titleWrapper: {
+    className: 'pricing2-title-wrapper',
+    children: [
+      {
+        name: 'title',
+        children: (
+          <span>
+            <p>BÁO CÁO BIỂU ĐỒ</p>
+          </span>
+        ),
+        className: 'pricing2-title-h1',
+      },
+    ],
+  },
+}
 export const Pricing20DataSource = {
   wrapper: { className: 'home-page-wrapper pricing2-wrapper' },
   page: { className: 'home-page pricing2' },
@@ -736,7 +697,7 @@ export const Teams40DataSource = {
             className: 'content8-content',
             children: (
               <span>
-                <p>MSSV</p>
+                <Tag color="green">MSSV: 92000017</Tag>
               </span>
             ),
           },
@@ -768,7 +729,7 @@ export const Teams40DataSource = {
             className: 'content8-content',
             children: (
               <span>
-                <p>MSSV</p>
+                <Tag color="geekblue">MSSV: 920000008</Tag>
               </span>
             ),
           },
@@ -791,7 +752,7 @@ export const Teams40DataSource = {
             children: (
               <span>
                 <span>
-                  <p>Châu Tuấn Anh</p>
+                  <p>Mai Châu Tuấn Anh</p>
                 </span>
               </span>
             ),
@@ -800,7 +761,7 @@ export const Teams40DataSource = {
             className: 'content8-content',
             children: (
               <span>
-                <p>MSSV</p>
+                <Tag color="gold">MSSV: 92000016</Tag>
               </span>
             ),
           },
@@ -816,14 +777,14 @@ export const Teams40DataSource = {
           img: {
             className: 'content8-img',
             children:
-              'https://gw.alipayobjects.com/zos/rmsportal/JahzbVrdHdJlkJjkNsBJ.png',
+              'https://b-f40-zpg.zdn.vn/7008047210935991285/431b8c905964ae3af775.jpg',
           },
           title: {
             className: 'content8-title',
             children: (
               <span>
                 <span>
-                  <p>sv1</p>
+                  <p>Trần Nam Khánh</p>
                 </span>
               </span>
             ),
@@ -832,7 +793,7 @@ export const Teams40DataSource = {
             className: 'content8-content',
             children: (
               <span>
-                <p>MSSV</p>
+                <Tag color="red">MSSV: 920000091</Tag>
               </span>
             ),
           },
@@ -848,14 +809,14 @@ export const Teams40DataSource = {
           img: {
             className: 'content8-img',
             children:
-              'https://gw.alipayobjects.com/zos/rmsportal/JahzbVrdHdJlkJjkNsBJ.png',
+              'https://b-f42-zpg.zdn.vn/6986412903313381184/c1b57212a8e65fb806f7.jpg',
           },
           title: {
             className: 'content8-title',
             children: (
               <span>
                 <span>
-                  <p>Phạm Tuấn Anh</p>
+                  <p>Phan Tiến Linh</p>
                 </span>
               </span>
             ),
@@ -864,7 +825,7 @@ export const Teams40DataSource = {
             className: 'content8-content',
             children: (
               <span>
-                <p>MSSV</p>
+                <Tag color="volcano">MSSV: 920000080</Tag>
               </span>
             ),
           },
