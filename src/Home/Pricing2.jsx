@@ -674,7 +674,7 @@ const DoiBongTable = (props) => {
 
 
   return (
-    <div {...props} {...wrapper}>
+    <div id="doibong_table" {...props} {...wrapper}>
       <div {...page}>
         <div key="title" {...titleWrapper}>
           {titleWrapper.children.map(getChildrenToRender)}

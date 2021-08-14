@@ -78,6 +78,9 @@ const ReportChart = (props) => {
     seriesField: 'name',
     label: {
       position: 'middle',
+      content : function content ( item ) {   
+        return '' . concat ( item . height_weight. toFixed ( 2 ) ) ;   
+      } ,
       layout: [
         { type: 'interval-adjust-position' },
         { type: 'interval-hide-overlap' },
@@ -156,7 +159,8 @@ const ReportChart = (props) => {
           {titleWrapper.children.map(getChildrenToRender)}
         </div>
         <OverPack {...dataSource.OverPack}>
-          <QueueAnim
+          <QueueAnim 
+          style={{textAlign:'center'}}
             type="bottom"
             leaveReverse
             ease={['easeOutQuad', 'easeInOutQuad']}
@@ -164,21 +168,21 @@ const ReportChart = (props) => {
           >
             <Tabs defaultActiveKey="1" centered>
               <TabPane tab="Chiều cao _ cân nặng" key="1">
-              <Tag style={{ marginBottom: "2%", height: "3vh", marginLeft: '39%' }} icon={<BarChartOutlined />} color="error">
+              <Tag style={{ marginBottom: "2%", height: "4vh" }} icon={<BarChartOutlined />} color="error">
                   Biểu đồ chiều cao cân nặng trung bình của các đội bóng
                 </Tag>
                 <Column style={{ marginBottom: "10%", height: "60vh" }} {...config} />
 
               </TabPane>
-              <TabPane tab="Độ tuổi" key="2">
-                <Tag style={{ marginBottom: "2%", height: "3vh", marginLeft: '39%' }} icon={<RadarChartOutlined />} color="error">
+              <TabPane tab="Độ tuổi" key="2" >
+                <Tag style={{ marginBottom: "2%", height: "4vh" }} icon={<RadarChartOutlined />} color="error">
                   Biểu đồ độ tuổi trung bình của các đội bóng
                 </Tag>
                 <Radar style={{ marginBottom: "10%", height: "60vh" }} {...ageConfig} />
               </TabPane>
               <TabPane tab="Khu vực" key="3">
                 <div>
-                  <Tag style={{ marginBottom: "2%", height: "3vh", marginLeft: '39%' }} icon={<PieChartOutlined />} color="error">
+                  <Tag style={{ marginBottom: "2%", height: "4vh" }} icon={<PieChartOutlined />} color="error">
                     Biểu đồ số lượng đội bóng theo khu vực
                   </Tag>
                   <Pie style={{ marginBottom: "10%", height: "60vh", marginLeft: '9%' }} {...config1} />

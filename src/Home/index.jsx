@@ -61,7 +61,7 @@ export default class Home extends React.Component {
                   <span>
                     <span>
                       <span>
-                        <p>OVERALL</p>
+                        <p>TỔNG QUAN</p>
                         <p>
                           <br />
                         </p>
@@ -221,7 +221,7 @@ export default class Home extends React.Component {
                   <span>
                     <span>
                       <span>
-                        <p>OVERALL</p>
+                        <p>TỔNG QUAN</p>
                         <p>
                           <br />
                         </p>

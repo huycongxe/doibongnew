@@ -160,7 +160,7 @@ export const Banner50DataSource = {
             <span>
               <span>
                 <p>
-                  <b>GO</b>
+                  <b>PYTHON</b>
                 </p>
               </span>
             </span>
@@ -198,7 +198,7 @@ export const Feature60DataSource = {
             <span>
               <span>
                 <span>
-                  <p>OVERALL</p>
+                  <p>TỔNG QUAN</p>
                   <p>
                     <br />
                   </p>
